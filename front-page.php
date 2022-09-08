@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
+
    <?php get_header();?>
-  <body>
+<main>
    HIIIIIII
-
-
-  </body>
-</html>
+   </main>
+   <?php get_footer();?>
