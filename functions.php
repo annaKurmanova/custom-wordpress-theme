@@ -8,14 +8,15 @@ add_action('after_setup_theme', 'custom_theme_support');
 
 // register styles
 
-function custom_register_styles() {
+function custom_register_scripts() {
   $version = wp_get_theme()->get('Version');
+  wp_enqueue_script('faq-block', get_template_directory_uri() . '/assets/js/faqBlock.js', array(), $version, true);
   wp_enqueue_style('custom-theme-styles', get_template_directory_uri(). '/style.css', array(), $version, 'all');
   wp_enqueue_style('custom-theme-sass', get_template_directory_uri(). '/assets/css/styles.css', array(), $version, 'all');
   wp_enqueue_style( 'dashicons' );
 }
 
-add_action('wp_enqueue_scripts', 'custom_register_styles');
+add_action('wp_enqueue_scripts', 'custom_register_scripts');
 
 
 

@@ -20,9 +20,9 @@ if( !empty($block['align']) ) {
 <div class="faq__block">
 
 <div class="faq__question">
-  <?php the_sub_field('question_body'); ?>
+  <p><?php the_sub_field('question_body'); ?></p>
   <div class="faq__category">
-  &num;<?php the_sub_field('category'); ?>
+     &num;<?php the_sub_field('category'); ?>
   </div>
 </div>
 <div class="faq__answer">
