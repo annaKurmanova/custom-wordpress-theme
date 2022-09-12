@@ -10,29 +10,29 @@ if( !empty($block['align']) ) {
   $className .= ' align' . $block['align'];
 }
 
-$category = get_field('category');
-$question = get_field('question');
-$answer   = get_field('answer');
-$avatar   = get_field('avatar');
-
-
 ?>
 
-<div class="<?php echo esc_attr($className)?>">
-<?php if(have_rows('faq')) : ?>
-<h1>Frequently asked questions</h1>
-<?php while (have_rows('faq')) : the_row(); ?>
-<div class="faq">
+
+<?php if(have_rows('question')) : ?>
+  <div class="<?php echo esc_attr($className)?>">
+<h3>Frequently asked questions</h3>
+<?php while (have_rows('question')) : the_row(); ?>
+<div class="faq__block">
+
+<div class="faq__question">
+  <?php the_sub_field('question_body'); ?>
   <div class="faq__category">
-  <?php echo $category; ?>
+  &num;<?php the_sub_field('category'); ?>
   </div>
-<div class="question">
-<?php echo $question; ?>
-<?php echo $answer; ?>
+</div>
+<div class="faq__answer">
+  <?php the_sub_field('answer'); ?>
 </div>
 </div>
+
 
 
 <?php endwhile; ?>
-
+</div>
 <?php endif;?>
+
