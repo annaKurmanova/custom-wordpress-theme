@@ -32,7 +32,24 @@ function register_custom_menus() {
 
 
 
+ add_action('acf/init', 'my_acf_init_block_types');
+ function my_acf_init_block_types() {
 
+     // Check function exists.
+     if( function_exists('acf_register_block_type') ) {
+
+         // register a testimonial block.
+         acf_register_block_type(array(
+             'name'              => 'faq',
+             'title'             => __('FAQ'),
+             'description'       => __('A custom faq block.'),
+             'render_template'   => 'template-parts/blocks/faq.php',
+             'category'          => 'formatting',
+             'icon'              => 'admin-comments',
+             'keywords'          => array( 'faq', 'quote' ),
+         ));
+     }
+ }
 
 
 
