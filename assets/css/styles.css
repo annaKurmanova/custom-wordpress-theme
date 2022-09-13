@@ -69,6 +69,23 @@ header {
   height: 80vh;
   object-fit: cover;
 }
+header .close {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  header .close {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    color: #fff;
+    padding: 0 20px 0 0;
+    cursor: pointer;
+  }
+}
+header .close span {
+  font-size: 1.5rem;
+}
 header nav {
   background: transparent;
   width: 100%;
@@ -80,6 +97,10 @@ header nav {
 @media screen and (max-width: 720px) {
   header nav {
     background-color: #000;
+    display: none;
+  }
+  header nav.active-menu {
+    display: flex;
   }
 }
 header nav .menu {
